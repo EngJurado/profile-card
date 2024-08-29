@@ -1,0 +1,176 @@
+---
+interface Props {
+    name: string;
+    position: string;
+    aboutMe: string;
+    linkedin: string;
+    github: string;
+    telegram: string;
+    twitterx: string;
+    cvLink: string
+}
+
+const {name, position, aboutMe, linkedin, github, telegram, twitterx, cvLink } = Astro.props;
+import { Image } from 'astro:assets';	  
+import profileImage from '/src/images/profile.webp';
+---
+
+<div class="container">
+    <div class="card-container">
+        <div class="image">
+            <Image 
+                src={profileImage} 
+                class='img-fluid'
+                alt="Carlos Jurado" 
+                loading="eager"
+            />
+        </div>
+        <div class="descripcion">
+            <h1>{name}</h1>
+            <h2>{position}</h2>
+            <p>{aboutMe}</p>
+            <div class="icons">
+                <a href={linkedin} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade">
+                        LinkedIn
+                    </span>
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href={github} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade">
+                        GitHub
+                    </span>
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href={telegram} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade">
+                        Telegram
+                    </span>
+                    <i class="bi bi-telegram"></i>
+                </a>
+                <a href={twitterx} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade">
+                        Twitter/X
+                    </span>
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href={cvLink} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade">
+                        Resume
+                    </span>
+                    <i class="bi bi-file-earmark-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* CONTAINER */
+    .container{
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    /* CARD */
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to right,#11111b, #181825);
+        border-radius: 0.75rem;
+        box-shadow: 0.25rem 0.5rem 0.75rem 0.25rem #11111b;
+    }
+    .image, .descripcion{
+        padding: 0.5rem;
+    }
+    /* IMAGE */
+    .image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-fluid{
+        width: 90%;
+        height: auto;
+        border-radius: 100%;
+    }
+    /* DESCRIPTION */
+    h1{
+        font-weight: 900;
+        font-size: 3rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    h2{
+        font-weight:600;
+        font-size: 1.5rem;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    p{
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    /* ICONS */
+    .icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icons a{
+        color: #cdd6f4;
+        font-size: 3rem;
+        transition: .3s;
+    }
+    a:hover{
+        transform: translateY(-5px) scale(1.1);
+    }
+    /* TOOLTIP */
+    .tooltip-text {
+        position: absolute;
+        top: -3rem;
+        left: -50%;
+        width: auto;
+        color: #cdd6f4;
+        font-size: 1.5rem;
+        background-color: #313244;
+        border-radius: 0.75rem;
+        padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    }
+    #fade {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .hover-text:hover #fade { opacity: 1; }
+    .hover-text {
+        position: relative;
+        display: inline-block;
+        margin: 0.5rem;
+        text-align: center;
+    }
+
+    /* Styles for desktop screens (1024px and up) */
+    @media only screen and (min-width: 1024px) {
+        .container{
+            align-items: center;
+            height: 100vh;
+        }
+        .card-container {
+            flex-direction: row-reverse;
+            width: 80%;
+            align-items: center;
+        }
+        .image, .descripcion{
+            padding: 1rem;
+        }
+        .image{
+            width: auto;
+        }
+        .img-fluid{
+            width: 80%;
+        }
+    }
+</style>
