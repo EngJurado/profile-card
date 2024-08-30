@@ -42,7 +42,7 @@ Edit this data in src/pages/index.astro
 - **`cvLink`**: Provide the URL to your resume in PDF format for download or insert it in /public/files/resume-cv.pdf
 - **`profileImage`**: Upload your professional profile picture here.
 
-To use more social links, copy and paste this block of code in /src/components/Card.astro below the existing social links:
+To use more social links, copy and paste this block of code in /src/components/Card.astro file in the position of your desire inside the card.
 
 ```sh
 <a href={twitterx} class="hover-text" target="_blank">
@@ -56,7 +56,7 @@ Change the icon by modifying **`bi-new-icon`** to an icon from the [Bootstrap We
 
 Then rename the variable newSocialLink in **`<a href={newSocialLink} class="hover-text" target="_blank">`**, and add the new variable in **`const {name, position, aboutMe, linkedin, github, telegram, twitterx, newSocialLink, cvLink } = Astro.props;`**.
 
-Add the new variable in /src/pages/index.astro file in the position of your desire inside the card:
+Add the new variable in /src/pages/index.astro below the existing social links.
 
 ```sh
 <Card	name="Carlos Jurado"
