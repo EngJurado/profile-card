@@ -1,11 +1,10 @@
 # Profile Card
 
 ## Overview
-This project is a web application built using Astro. The main purpose is to create a profile card with social media links. It includes various components and utilities to create a responsive and interactive user interface.
+
+This project is a web application built using Astro, designed to create a profile card with social media links. It includes various components and utilities to build a responsive and interactive user interface. The template allows for easy integration of multiple social links, enhancing user connectivity.
 
 ![mockup](https://github.com/EngJurado/profile-card/blob/main/mockup.jpg)
-
-
 
 ## Folder Structure
 
