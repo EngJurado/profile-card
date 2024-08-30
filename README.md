@@ -29,6 +29,47 @@ src/
 ### Pages
 - **pages/index.astro**: The main landing page of the application.
 
+## Customization
+
+Edit this data in src/pages/index.astro
+
+- **`title`**: This change will be reflected in the browser tab.
+- **`description`**: This is a metadata tag used to provide a brief description of your page in search engines.
+- **`name`**: Enter your name here.
+- **`position`**: Enter your job position here.
+- **`about me`**: Write a brief description of who you are and what you do. It's recommended to keep it under 540 characters.
+- **`linkedin`**, **`github`**, **`telegram`** and **`x`**: Enter the URLs to your personal pages here.
+- **`cvLink`**: Provide the URL to your resume in PDF format for download or insert it in /public/files/resume-cv.pdf
+- **`profileImage`**: Upload your professional profile picture here.
+
+To use more social links, copy and paste this block of code in /src/components/Card.astro below the existing social links:
+
+```sh
+<a href={twitterx} class="hover-text" target="_blank">
+    <span class="tooltip-text" id="fade">
+        Twitter/X
+    </span>
+    <i class="bi bi-twitter-x"></i>
+</a>
+````
+Change the icon by modifying **`bi-new-icon`** to an icon from the [Bootstrap Website](https://icons.getbootstrap.com).
+
+Then rename the variable newSocialLink in **`<a href={newSocialLink} class="hover-text" target="_blank">`**, and add the new variable in **`const {name, position, aboutMe, linkedin, github, telegram, twitterx, newSocialLink, cvLink } = Astro.props;`**.
+
+Add the new variable in /src/pages/index.astro file in the position of your desire inside the card:
+
+```sh
+<Card	name="Carlos Jurado"
+    position="Bioengineering | Brain modulation | Artificial Intelligence"
+    aboutMe="Dedicated Bioengineer with expertise in medical devices and neuromodulation, pursuing a Master’s in AI. Experienced at Medtronic in surgical support, neurostimulator programming, and patient safety. Strong analytical skills and problem-solving abilities drive my commitment to innovation and continuous improvement in healthcare."
+    linkedin="https://www.linkedin.com/in/engjurado/"
+    github="https://github.com/EngJurado"
+    telegram="https://telegram.me/engjurado"
+    twitterx="https://x.com/EngJurado"
+    cvLink="/files/resume-cv.pdf"
+/>
+```
+
 ## Setup and Usage
 
 1. **Clone the repository**:
