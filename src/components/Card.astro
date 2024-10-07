@@ -5,12 +5,13 @@ interface Props {
     aboutMe: string;
     linkedin: string;
     github: string;
+    signal: string;
     telegram: string;
     twitterx: string;
     cvLink: string
 }
 
-const {name, position, aboutMe, linkedin, github, telegram, twitterx, cvLink } = Astro.props;
+const {name, position, aboutMe, linkedin, github, signal, telegram, twitterx, cvLink } = Astro.props;
 
 import { Image } from 'astro:assets';	  
 import profileImage from '/src/images/profile.webp';
@@ -42,6 +43,12 @@ import profileImage from '/src/images/profile.webp';
                         GitHub
                     </span>
                     <i class="bi bi-github"></i>
+                </a>
+                <a href={signal} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade">
+                        Signal
+                    </span>
+                    <i class="bi bi-signal"></i>
                 </a>
                 <a href={telegram} class="hover-text" target="_blank">
                     <span class="tooltip-text" id="fade">
